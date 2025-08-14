@@ -1,0 +1,339 @@
+body,
+.dark-bg {
+  /* Professional, modern blue/gray gradient background */
+  background: linear-gradient(135deg, #181c24 0%, #232a34 80%, #262f3d 100%) !important;
+  color: #e6e8ed !important;
+}
+
+/* Accent color variables for easy reuse */
+:root {
+  --accent: #29b6f6;             /* Soft blue accent */
+  --accent-hover: #64ffda;        /* Teal for hover */
+  --dark-card: #242d38;           /* Cards: deep blue-gray */
+  --dark-section: #212734;        /* Sections: slightly lighter */
+  --dark-input: #232a34;          /* Inputs: close to card */
+  --border-accent: #29b6f6;
+  --shadow-accent: 0 4px 24px #29b6f655;
+  --shadow-accent-hover: 0 8px 32px #64ffd988;
+}
+
+.hero-section {
+  background: linear-gradient(120deg, #242d38 0%, #232a34 100%);
+  padding: 80px 0 60px 0;
+  transition: background 0.3s;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #202733;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  transition: border 0.3s, box-shadow 0.3s;
+}
+.profile-img:hover {
+  border: 5px solid var(--accent);
+  box-shadow: 0 8px 32px #29b6f655;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  color: var(--accent) !important;
+  transition: color 0.2s;
+}
+.navbar-brand:hover {
+  color: var(--accent-hover) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #e6e8ed !important;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 0.4rem;
+  margin: 0 0.2rem;
+  padding: 0.45rem 1rem;
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #181c24 !important;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+  font-weight: bold;
+  box-shadow: var(--shadow-accent);
+}
+
+/* Mobile navbar customizations */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: #232a34;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 6px 24px #29b6f620;
+    padding: 1.2rem 0;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+  }
+  .custom-navbar .navbar-nav .nav-link {
+    padding: 0.85rem 1.2rem;
+    border-radius: 0.7rem;
+    margin: 0.3rem 0;
+    font-size: 1.11rem;
+    color: var(--accent) !important;
+    transition: background 0.2s, color 0.2s;
+  }
+  .custom-navbar .navbar-nav .nav-link:hover,
+  .custom-navbar .navbar-nav .nav-link.active {
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: #181c24 !important;
+    font-weight: bold;
+  }
+}
+
+.project-card,
+.education-card,
+.dark-card {
+  background: var(--dark-card) !important;
+  color: #e6e8ed !important;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+}
+.project-card-theme {
+  background: linear-gradient(120deg, #232a34 0%, #242d38 100%) !important;
+}
+
+.project-card:hover,
+.education-card:hover,
+.dark-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: var(--shadow-accent-hover);
+  border: 1.5px solid var(--border-accent);
+}
+
+.project-img {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  max-height: 180px;
+  object-fit: cover;
+  background: #202733;
+  transition: transform 0.35s cubic-bezier(0.17, 0.67, 0.83, 0.67), filter 0.35s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  filter: brightness(0.92) grayscale(8%);
+}
+.project-img.hover-zoom:hover {
+  transform: scale(1.08) rotate(-2deg);
+  filter: brightness(1.04) grayscale(0%) drop-shadow(0 8px 32px #29b6f6aa);
+  z-index: 2;
+  box-shadow: 0 16px 32px rgba(41,182,246,0.14);
+}
+
+.dark-section {
+  background: var(--dark-section) !important;
+}
+
+/* Accent text and buttons */
+.text-accent, .accent-text {
+  color: var(--accent) !important;
+}
+.btn-accent {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%) !important;
+  color: #181c24 !important;
+  font-weight: bold;
+  border: none;
+  transition: box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 2px 10px #29b6f624;
+}
+.btn-accent:hover, .btn-accent:focus {
+  background: linear-gradient(90deg, var(--accent-hover) 0%, var(--accent) 100%) !important;
+  color: #212734 !important;
+  box-shadow: 0 4px 24px #29b6f655;
+  transform: scale(1.045);
+}
+
+/* Section titles */
+.section-title {
+  border-bottom: 3px solid var(--accent);
+  width: fit-content;
+  padding-bottom: 6px;
+  color: #e6e8ed !important;
+}
+
+/* Card and form styling */
+.card,
+.contact-card,
+.feedback-card {
+  transition: box-shadow 0.3s, transform 0.25s;
+  background: var(--dark-card);
+  border-radius: 1rem;
+}
+.card:hover,
+.contact-card:hover,
+.feedback-card:hover {
+  box-shadow: var(--shadow-accent-hover);
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* Contact and Feedback form fields */
+input.form-control,
+textarea.form-control,
+.dark-input {
+  background: var(--dark-input) !important;
+  color: #e6e8ed !important;
+  border: 1px solid #374151 !important;
+  border-radius: 0.6rem;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+}
+input.form-control::placeholder,
+textarea.form-control::placeholder {
+  color: #b0b7be !important;
+}
+input.form-control:focus,
+textarea.form-control:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 0.2rem #29b6f640;
+  background: #222831 !important;
+}
+
+/* Contact/Feedback section spacing (cards vertical on mobile) */
+#contact .card + .card {
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  #contact .card + .card {
+    margin-top: 0;
+    margin-left: 2.5rem;
+  }
+  #contact {
+    flex-direction: row !important;
+    gap: 2.5rem !important;
+    align-items: flex-start !important;
+  }
+}
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 50px 0 30px 0;
+  }
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+  .project-img {
+    max-height: 110px;
+  }
+  #contact .card {
+    margin-left: 0 !important;
+  }
+}
+
+/* Links */
+a.text-accent {
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+a.text-accent:hover,
+a.text-accent:focus {
+  color: var(--accent-hover) !important;
+}
+
+/* General links and buttons */
+a, .btn-link {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+a:hover, .btn-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  background: #1a1f27 !important;
+  border-top: 1px solid #232a34;
+}
+#education .text-muted {
+  color: #7fd8f6 !important;
+  opacity: 1 !important;
+}
+#projects .text-muted {
+  color: #7fd8f6 !important;
+  opacity: 1 !important;
+}
+
+
+/* Card hover effect for Contact & Feedback (applies to both) */
+#contact .card:hover {
+  box-shadow: 0 8px 32px #29b6f6cc, 0 0 0 2px #29b6f6;
+  border: 1.5px solid #29b6f6;
+  background: linear-gradient(120deg, #253042 0%, #232a34 90%);
+  transition: box-shadow 0.25s, border 0.25s, background 0.25s;
+}
+
+/* Input and textarea hover/focus effect in Contact & Feedback */
+#contact .form-control:hover,
+#contact .form-control:focus {
+  border-color: #29b6f6 !important;
+  box-shadow: 0 0 0 0.2rem #29b6f640;
+  background: #242d38 !important;
+  color: #e6e8ed !important;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+/* Button hover/focus effect in Contact & Feedback */
+#contact .btn-accent:hover,
+#contact .btn-accent:focus {
+  background: linear-gradient(90deg, #29b6f6 0%, #29b6f6 100%) !important;
+  color: #212734 !important;
+  box-shadow: 0 4px 16px #29b6f655, 0 0 0 2px #29b6f6;
+  transform: scale(1.045);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+/* Add after your .hero-section styles or at the bottom */
+
+/* Hero section background image styling */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, #242d38 0%, #232a34 100%);
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  max-width: 1500px;
+  min-width: 700px;
+  height: 100%;
+  min-height: 320px;
+  transform: translateX(-50%);
+  object-fit: cover;
+  opacity: 0.23;
+  z-index: 1;
+  pointer-events: none;
+  filter: grayscale(70%) blur(1.5px);
+}
+
+/* Ensure content is above background */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 800px) {
+  .hero-bg-img {
+    min-width: 370px;
+    min-height: 220px;
+    object-position: center top;
+    opacity: 0.18;
+  }
+}
+.project-img {
+  object-fit: contain !important;
+  width: 100%;
+  height: 250px; /* or whatever height your card image area is */
+  background-color: #000; /* fills gaps */
+}
